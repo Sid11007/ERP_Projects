@@ -1,5 +1,6 @@
 import { PropaneSharp } from "@mui/icons-material";
 import { Grid, TextField, Typography } from "@mui/material";
+import { fontSize, height } from "@mui/system";
 import React, { useState } from "react";
 
 const Field = (props) => {
@@ -18,6 +19,7 @@ const Field = (props) => {
     select: props.dropdown,
     value: props.value,
     placeholder: props.placeholder,
+    fullWidth: true,
     
     onChange: (e) => {
       handleOnChangeFunction(e);
@@ -34,9 +36,9 @@ const Field = (props) => {
     <div>
       <Grid container alignItems="center" spacing={1} sx={{ paddingBottom: 1 }}>
         <Grid item xs>
-          <Grid container justifyContent="flex-end" alignItems="flex-end">
+          <Grid container alignItems="flex-end" justifyContent="flex-end">
             <Grid item>
-              <Typography>{props.label}</Typography>
+              <Typography sx={{fontSize:props.fontSize || "15px"}}>{props.label}</Typography>
             </Grid>
           </Grid>
         </Grid>
